@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+    width: 900px;
+    margin: 0px;
+    flex: 0.5;
+    
+}
+
+.pixel { 
+    width: auto;
+    height: auto;
+    flex: 1 0 auto;
+    border: 1px solid red;
+    margin: 0px;
+    padding: 0px;
+ 
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    flex: 1;}
+
+.changed {
+    background-color: brown;
+}
+
+.maindiv {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
