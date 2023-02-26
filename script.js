@@ -14,21 +14,27 @@ while (true){
 
 };
 
+const randomNumber = () => Math.floor(Math.random()*256);
+
 const changeColour = function(object) {
-    object.classList.add("changed");
+
+    object.style.cssText = `background-color: rgba(${randomNumber()}, ${randomNumber()}, ${randomNumber()}, 0.7);`;
 };
 
 const resetPixels = function (object) {
-  object.classList.remove("changed");
+    object.style.cssText = `background-color: rgba(0, 0, 0, 0.0);`;
 }
 
+let x = 0;
+let y = 0;
 
-for (let i = 0; i < dimensions; i++){
+for (x = 0; x < dimensions; x++){
     const row = document.createElement("div");
     row.classList.add("row")
-    for (let i = 0; i < dimensions ; i++) {
+    for (y = 0; y < dimensions ; y++) {
         const pixel = document.createElement("p");
         pixel.classList.add("pixel")
+        pixel.setAttribute('id', `${x}${y}`)
         row.appendChild(pixel);
     }
    
@@ -42,3 +48,4 @@ pixels.forEach(pixel => pixel.addEventListener('mouseover', () => changeColour(p
 const resetButton = document.getElementById("reset");
 console.log(resetButton);
 resetButton.addEventListener('click', () => pixels.forEach(element => resetPixels(element)));
+
